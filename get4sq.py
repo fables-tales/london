@@ -2,6 +2,7 @@ import urllib
 import pprint
 import json
 import time
+import os
 
 south = 51.416
 north = 51.623
@@ -47,4 +48,6 @@ if __name__ == "__main__":
                 f.flush()
                 f.close()
                 
+        print "rendering"
+        os.system("python csv.py > csv_data  && ./munge && python render.py")
         loopcount += 1
