@@ -9,10 +9,12 @@ north = 51.623
 west = -0.415
 east = 0.179
 
+
+client_id = ""
+client_secret = ""
+
 url1 = "https://api.foursquare.com/v2/venues/explore?"
-url2 = "&client_id=0XUU2AT1ZSPMIGEHF23EDFCMQV4VMTFQOABPMCVDUCEPQAYM&client_secret=XY2QFQF0QSNI04DAXMKTQQT3LHPHPFLLOXTRVRZ1YQWO0ORX&v=20120228&limit=50"
-
-
+url2 = "&client_id=" + client_id + "&client_secret=" + client_secret + "&v=20120228&limit=50"
 
 if __name__ == "__main__":
     loopcount = 0    
