@@ -1,7 +1,7 @@
 #London
 
 this is a simple program to apply lightmaps to a location. Currently it's hardcoded to london.
-Check it out on the web: http://samphippen.com/
+Check it out on the web: http://samphippen.com/london
 
 ##Setup
 build the c program to lightmap the images with `gcc munge.c -O2 -o munge` and then
