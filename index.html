@@ -19,11 +19,11 @@
         var west = -0.415;
         var east = 0.179;
     
+        setInterval("window.scrollTo(700,410)", 200);
         function f() {
             console.log("refreshing image");
             $("#bees").empty()
             $("#bees").append("<img src=\"lit-map.png\"></img>");
-            setTimeout("window.scrollTo(700,410)", 200);
             
         }
 
