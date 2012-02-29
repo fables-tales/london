@@ -19,51 +19,18 @@
         var west = -0.415;
         var east = 0.179;
     
-        function drawCircle(ctx, x, y, radius){
-            //draw a circle
-            ctx.beginPath();
-            ctx.arc(x, y, radius, 0, Math.PI*2, true); 
-            ctx.closePath();
-            ctx.fill();
-        }
-
-        var i = 0;
-
-        function f(data) {
-            console.log("got data from server!!!" + i )
-            i++ 
-            ctx.clearRect(0,0,10000,10000);
-            ctx.drawImage(img, 0, 0, 2668, 1494, 0, 0, w, h);
-            $.each(data, function(key, value) {
-                offsetlat = value.lat - south
-                offsetlatPixels = offsetlat / (north-south) * h
-
-                offestlong = value.long - west
-                offsetlongPixels = offestlong / (east-west) * w 
-                drawCircle(ctx, offsetlongPixels, offsetlatPixels, value.count*2);
-            });
-//            $.each(data[1], function(key, value) {
-//                offsetlat = value.lat - south
-//                offsetlatPixels = offsetlat / (north-south) * h
-//
-//                offestlong = value.long - west
-//                offsetlongPixels = offestlong / (east-west) * w 
-//                drawCircle(ctx, offsetlongPixels, offsetlatPixels, value.count*2);
-//            });
-        }
-
-        function getdata() {
-            $.get("loc2.json", f);
-        }
-   
-        img.onload = function() {
-            ctx.drawImage(img, 0, 0, 2668, 1494, 0, 0, w, h);
-            getdata()
-            setInterval(getdata, 500);
+        function f() {
+            console.log("refreshing image");
+            $("#bees").empty()
+            $("#bees").append("<img src=\"lit-map.png\"></img>");
+            setTimeout("window.scrollTo(700,410)", 200);
             
         }
-        img.src = 'map.png';
-        
+
+        setInterval(f, 30000);    
+        f();
+
     </script>
 </body>
 </html>
+
